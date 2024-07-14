@@ -1,0 +1,4 @@
+# script to initialize prog Python environment
+conda activate tennis-face
+make install-deps
+export PYTHONPATH=$(pwd)
