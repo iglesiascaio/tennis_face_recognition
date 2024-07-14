@@ -20,7 +20,7 @@ This project is a Face Recognition App specifically designed for recognizing ten
 
 ## Demo
 
-
+![Gif Demo](static/demo_face_recognition_app.gif)
 
 ## Features
 
