@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <img src="{{ url_for('uploaded_file', filename=file_name) }}" alt="Uploaded Image" class="player-image">
+        {% if player_name %}
+            <p>Prediction: <strong>{{ player_name }}</strong></p>
+            <p>Probabilidade: <strong>{{ '{:.2f}%'.format(probability) }}</strong></p>
+        {% else %}
+            <img src="{{ url_for('static', filename='tennis_question_mark.jpg') }}" alt="Player Not Found" class="player-image">
+            <p>Player not found!</p>
+        {% endif %}
+        <a href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+</body>
+</html>
