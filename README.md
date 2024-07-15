@@ -15,12 +15,19 @@ This project is a Face Recognition App specifically designed for recognizing ten
 - [Model Training](#model-training)
 - [Model Predictor](#model-predictor)
 - [Deployment](#deployment)
-- [Screenshots](#screenshots)
 
 
 ## Demo
 
+### Inputting a valid tennis player image
+This is what the app looks like when inputting a tennis player that the model is familiar with: 
+
 ![Gif Demo](static/demo_face_recognition_app.gif)
+
+### Inputting a random image
+And this is how the model will react if we put a random person, like Neymar Jr., into the app: 
+
+![Gif Demo](static/demo_error.gif)
 
 ## Features
 
@@ -57,6 +64,31 @@ This project is a Face Recognition App specifically designed for recognizing ten
 
 ## Usage
 
+### Complete App
+
+Deploy the app using Docker and Flask. The interface is built using HTML and CSS.
+
+#### Step-by-Step Guide
+
+1. Make sure Docker is installed and running on your machine.
+
+2. Navigate to the Project Directory and build the Docker Image. This command will create a Docker image named face_recognition_flask:
+
+```sh
+docker build -t face_recognition_flask .
+```
+
+3. Run the Docker container to start the Flask app. This command maps port 5001 on your local machine to port 5000 in the Docker container:
+```
+sh
+docker run -p 5001:5000 face_recognition_flask
+```
+
+4. Open a web browser and go to http://localhost:5001 to access the app. You should see the home page of your face recognition tennis app.
+
+
+This setup ensures that your app is containerized, making it easier to deploy and manage.
+
 ### Data Loader
 
 The data loader uses a Google Images crawler to download images of tennis players. You can customize the players and the number of images in the `data_loader.py` file. You can also choose the players to download images using the `config/data-loader.yaml` file. 
@@ -92,4 +124,30 @@ Parameters
 - --img-size: Desired size for resizing the images (default: 160,160).
 - --batch-size: Batch size for training (default: 32).
 - --epochs: Number of epochs for training (default: 100).
+
+### Player Prediction
+
+To predict the tennis players using the face recognition models, you can use the provided script with Click for command-line argument parsing. The prediction process involves detecting and preprocessing the face, then using either the compare_faces method or a deep learning model based on FaceNet to make predictions - or a combination of the two methods. 
+
+To predict a series of player to test your model, use a command like this one:
+
+```sh
+python model_predict.py --model-path ./model/face_recognition_model_all --encodings-path ./model/face_encodings.pkl --to-predict-path ./data/to_predict --img-size 160,160
+```
+
+Parameters
+- --model-path: Path to the saved model (default: ./model/face_recognition_model_all).
+- --encodings-path: Path to the saved face encodings (default: ./model/face_encodings.pkl).
+- --to-predict-path: Directory containing images to predict (default: ./data/to_predict).
+- --img-size: Desired size for resizing the images (default: 160,160).
+
+The script will load the saved model and face encodings, then run predictions on the images in the specified directory using the chosen method (default = "combined").
+
+Copyright © 2024 by Caio Iglesias. All rights reserved
+
+
+
+
+
+
 
