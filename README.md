@@ -1,6 +1,6 @@
 # Tennis Face Recognition App
 
-This project is a Face Recognition App specifically designed for recognizing tennis players. The app uses two different methods for face recognition: `compare_faces` from the `face_recognition` library and a Deep Learning model based on FaceNet. The app includes tools for downloading images from Google Images, preprocessing and filtering outliers, model training, prediction, and deployment using Docker and Flask API.
+This project is a Face Recognition App specifically designed for recognizing tennis players. The app uses two different methods for face recognition: `compare_faces` from the `face_recognition` library and a Deep Learning model based on `FaceNet`. The app includes tools for downloading images from Google Images, preprocessing and filtering outliers, model training, prediction, and deployment using `Docker` and `Flask API`.
 
 ![Tennis Face Recognition image](static/tennis_face_recognition_wide.jpeg)
 
@@ -10,11 +10,11 @@ This project is a Face Recognition App specifically designed for recognizing ten
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-    - [App Deployment](#app-deployment)
     - [Data Loader](#data-loader)
     - [Image Preprocessing](#image-preprocessing)
     - [Model Training](#model-training)
     - [Model Predictor](#model-predictor)
+    - [App Deployment](#app-deployment)
 
 
 ## Demo
@@ -63,31 +63,6 @@ And this is how the model will react if we put a random person, like Neymar Jr.,
     ```
 
 ## Usage
-
-### App Deployment
-
-Deploy the app using Docker and Flask. The interface is built using HTML and CSS.
-
-#### Step-by-Step Guide
-
-1. Make sure Docker is installed and running on your machine.
-
-2. Navigate to the Project Directory and build the Docker Image. This command will create a Docker image named face_recognition_flask:
-
-```sh
-docker build -t face_recognition_flask .
-```
-
-3. Run the Docker container to start the Flask app. This command maps port 5001 on your local machine to port 5000 in the Docker container:
-```
-sh
-docker run -p 5001:5000 face_recognition_flask
-```
-
-4. Open a web browser and go to http://localhost:5001 to access the app. You should see the home page of your face recognition tennis app.
-
-
-This setup ensures that your app is containerized, making it easier to deploy and manage.
 
 ### Data Loader
 
@@ -142,6 +117,32 @@ Parameters
 - --img-size: Desired size for resizing the images (default: 160,160).
 
 The script will load the saved model and face encodings, then run predictions on the images in the specified directory using the chosen method (default = "combined").
+
+### App Deployment
+
+Deploy the app using Docker and Flask. The interface is built using HTML and CSS.
+
+#### Step-by-Step Guide
+
+1. Make sure Docker is installed and running on your machine.
+
+2. Navigate to the Project Directory and build the Docker Image. This command will create a Docker image named face_recognition_flask:
+
+```sh
+docker build -t face_recognition_flask .
+```
+
+3. Run the Docker container to start the Flask app. This command maps port 5001 on your local machine to port 5000 in the Docker container:
+```
+sh
+docker run -p 5001:5000 face_recognition_flask
+```
+
+4. Open a web browser and go to http://localhost:5001 to access the app. You should see the home page of your face recognition tennis app.
+
+
+This setup ensures that your app is containerized, making it easier to deploy and manage.
+
 
 Copyright © 2024 by Caio Iglesias. All rights reserved
 
