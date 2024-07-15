@@ -133,15 +133,14 @@ docker build -t face_recognition_flask .
 ```
 
 3. Run the Docker container to start the Flask app. This command maps port 5001 on your local machine to port 5000 in the Docker container:
-```
-sh
+```sh
 docker run -p 5001:5000 face_recognition_flask
 ```
 
 4. Open a web browser and go to http://localhost:5001 to access the app. You should see the home page of your face recognition tennis app.
 
 
-This setup ensures that your app is containerized, making it easier to deploy and manage.
+This setup ensures that the app is containerized, making it easier to deploy and manage.
 
 
 Copyright © 2024 by Caio Iglesias. All rights reserved
