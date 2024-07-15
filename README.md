@@ -1,6 +1,6 @@
 # Tennis Face Recognition App
 
-This project is a Face Recognition App specifically designed for recognizing tennis players. The app uses two different methods for face recognition: `compare_faces` from the `face_recognition` library and a Deep Learning model based on `FaceNet`. The app includes tools for downloading images from Google Images, preprocessing and filtering outliers, model training, prediction, and deployment using `Docker` and `Flask API`.
+This project is a Face Recognition App specifically designed for recognizing tennis players. The app uses two different methods for face recognition: a Deep Learning model based on `FaceNet` and `compare_faces` from the `face_recognition` library. The app includes tools for downloading images from Google Images, preprocessing and filtering outliers, model training, prediction, and deployment using `Docker` and `Flask API`.
 
 ![Tennis Face Recognition image](static/tennis_face_recognition_wide.jpeg)
 
