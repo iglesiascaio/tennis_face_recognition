@@ -89,7 +89,7 @@ To train the face recognition models, you can use the provided script with Click
 To train the models, use a command like this one:
 
 ```sh
-python train.py --data-dir ./data/preprocessed_images --model-save-path ./model/face_recognition_model_all --encodings-save-path ./model/face_encodings.pkl --img-size 160,160 --batch-size 32 --epochs 100
+python runner/model_training.py --data-dir ./data/preprocessed_images --model-save-path ./model/face_recognition_model_all --encodings-save-path ./model/face_encodings.pkl --img-size 160,160 --batch-size 32 --epochs 100
 ```
 
 Parameters
@@ -107,7 +107,7 @@ To predict the tennis players using the face recognition models, you can use the
 To predict a series of player to test your model, use a command like this one:
 
 ```sh
-python model_predict.py --model-path ./model/face_recognition_model_all --encodings-path ./model/face_encodings.pkl --to-predict-path ./data/to_predict --img-size 160,160
+python runner/model_predict.py --model-path ./model/face_recognition_model_all --encodings-path ./model/face_encodings.pkl --to-predict-path ./data/to_predict --img-size 160,160
 ```
 
 Parameters
