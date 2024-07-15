@@ -9,6 +9,3 @@ class TupleParamType(click.ParamType):
             return tuple(map(int, value.split(",")))
         except ValueError:
             self.fail(f"{value} is not a valid tuple", param, ctx)
-
-
-TUPLE = TupleParamType()
