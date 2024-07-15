@@ -10,7 +10,7 @@ This project is a Face Recognition App specifically designed for recognizing ten
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-    - [App Deployment](#deployment)
+    - [App Deployment](#app-deployment)
     - [Data Loader](#data-loader)
     - [Image Preprocessing](#image-preprocessing)
     - [Model Training](#model-training)
