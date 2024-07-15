@@ -62,9 +62,9 @@ def predict():
         method = request.form.get("method", "combined")
         results = predictor.predict_image(file_path, method)
         if results:
-            player_name = results.get("Combined Prediction")[0]
+            player_name = results.get("Combined Prediction")[0].replace("_", " ")
             probability = results.get("Combined Prediction")[1] * 100
-            if probability < 65 or results.get("Face Comparison")[1] > 0.6:
+            if probability < 65 and results.get("Face Comparison")[1] > 0.5:
                 return render_template(
                     "result.html",
                     player_name=None,
