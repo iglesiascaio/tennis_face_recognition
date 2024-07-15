@@ -1,6 +1,6 @@
 # Tennis Face Recognition App
 
-This project is a Face Recognition App specifically designed for recognizing tennis players. The app uses two different methods for face recognition: a Deep Learning model based on `FaceNet` and `compare_faces` from the `face_recognition` library. The app includes tools for downloading images from Google Images, preprocessing and filtering outliers, model training, prediction, and deployment using `Docker` and `Flask API`.
+This project is a Face Recognition App specifically designed for recognizing tennis players. The app uses two different methods for face recognition: a Deep Learning model based on `FaceNet` and distance-based method using face encodings from the `face_recognition` library. The app includes tools for downloading images from Google Images, preprocessing and filtering outliers, model training, prediction, and deployment using `Docker` and `Flask API`.
 
 ![Tennis Face Recognition image](static/tennis_face_recognition_wide.jpeg)
 
@@ -33,7 +33,7 @@ And this is how the model will react if we put a random person, like Neymar Jr.,
 
 - Download images from tennis players using Google Images crawler;
 - Preprocess images and filtering out outliers and images with multiple faces;
-- Train models using two different methods: `compare_faces` and a Deep Learning model using transfer learning based on FaceNet;
+- Train models using two different methods: Deep Learning model using transfer learning based on FaceNet and a distance-based method using face encodings;
 - Predict faces using the trained models;
 - Deploy the app using Docker and Flask with a web interface.
 
@@ -102,7 +102,7 @@ Parameters
 
 ### Model Prediction
 
-To predict the tennis players using the face recognition models, you can use the provided script with Click for command-line argument parsing. The prediction process involves detecting and preprocessing the face, then using either the compare_faces method or a deep learning model based on FaceNet to make predictions - or a combination of the two methods. 
+To predict the tennis players using the face recognition models, you can use the provided script with Click for command-line argument parsing. The prediction process involves detecting and preprocessing the face, then using either the compare_faces method (distance-based method using face encodings) or a deep learning model based on FaceNet to make predictions - or a combination of the two methods. 
 
 To predict a series of player to test your model, use a command like this one:
 
