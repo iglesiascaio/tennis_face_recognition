@@ -10,11 +10,11 @@ This project is a Face Recognition App specifically designed for recognizing ten
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Data Loader](#data-loader)
-- [Image Preprocessing](#image-preprocessing)
-- [Model Training](#model-training)
-- [Model Predictor](#model-predictor)
-- [Deployment](#deployment)
+    - [App Deployment](#deployment)
+    - [Data Loader](#data-loader)
+    - [Image Preprocessing](#image-preprocessing)
+    - [Model Training](#model-training)
+    - [Model Predictor](#model-predictor)
 
 
 ## Demo
@@ -64,7 +64,7 @@ And this is how the model will react if we put a random person, like Neymar Jr.,
 
 ## Usage
 
-### Complete App
+### App Deployment
 
 Deploy the app using Docker and Flask. The interface is built using HTML and CSS.
 
@@ -107,7 +107,7 @@ python runner/image_preprocessing.py
 ```
 
 
-### Training the Model
+### Model Training
 
 To train the face recognition models, you can use the provided script with Click for command-line argument parsing. The training process involves two main components: computing distances between face encodings and training a deep learning model based on FaceNet. We also use the `ImageDataGenerator` from TensorFlow in order to dynamically generate images that avoid overfitting. 
 
@@ -125,7 +125,7 @@ Parameters
 - --batch-size: Batch size for training (default: 32).
 - --epochs: Number of epochs for training (default: 100).
 
-### Player Prediction
+### Model Prediction
 
 To predict the tennis players using the face recognition models, you can use the provided script with Click for command-line argument parsing. The prediction process involves detecting and preprocessing the face, then using either the compare_faces method or a deep learning model based on FaceNet to make predictions - or a combination of the two methods. 
 
